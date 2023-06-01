@@ -27,7 +27,7 @@ if(miEdad > tuEdad){
 } else {
     let diferencia = tuEdad - miEdad;
 
-    console.log('eres ' + diferencia + ' años mayor que yo')
+    console.log('eres ' + diferencia + ' años menor que yo')
 }
 
 //3.Si a es mayor que b, devuelve 'a es mayor que b'; de lo contrario, 'a es menor que b'. Trate de implementarlo de maneras diferentes
@@ -48,7 +48,7 @@ if(a > b) {
 //Ingrese un número: 9
 //9 es un número impar
 
-let numero = 2;
+let numero = prompt("ingrese un número:");
 if(numero % 2 == 0) {
     console.log(`${numero} es un número par`);
 } else {
@@ -58,21 +58,28 @@ if(numero % 2 == 0) {
 
 //ejercicios nivel_2
 
-//1. Escriba un código que pueda calificar a los estudiantes de acuerdo con sus puntajes:
-/*- 80-100, A
+/*1. Escriba un código que pueda calificar a los estudiantes de acuerdo con sus puntajes:
+- 80-100, A
 - 70-89, B
 - 60-69, C
 - 50-59, D
 - 0-49, F
 */
-let A = 80-100;
-let B = 70-89;
-let C = 60-69;
-let D = 50-59;
-let F = 0-49;
-nota = A, B, C, D, F 
-   ? console.log(`ESTUDIANTE APROBADO CON: ${nota}`)
-   : console.log("ESTUDIANTE REPROBADO")
+let puntaje = prompt("Ingrese la calificacion del estudiante");
+alert(puntaje);
+if(parseInt(puntaje) >= 80 && parseInt(puntaje) <= 100) {
+  alert("CATEGORIA A")
+} else if (parseInt(puntaje) >= 70 && parseInt(puntaje) <= 79) {
+  alert("SEGUNDO") 
+} else if (parseInt(puntaje) >= 60 && parseInt(puntaje) <= 69) { 
+  alert("CATEGORIA C")
+} else if (parseInt(puntaje) >= 50 && parseInt(puntaje) <= 59) { 
+  alert("CATEGORIA D")
+} else if (parseInt(puntaje) >= 0 && parseInt(puntaje) <= 49) { 
+  alert("CATEGORIA E")
+} else { 
+  alert("INGRESE NUMEROS DEL 0 AL 100");
+}
 
 /*2. Consulta si la temporada es Otoño, Invierno, Primavera o Verano.
 Si la entrada del usuario es :
@@ -81,52 +88,44 @@ Si la entrada del usuario es :
 - Marzo, Abril o Mayo, la temporada es Primavera
 - Junio, Julio o Agosto, la temporada es Verano*/
 
-let temporada = "temporada";
+let estacion = prompt("Ingrese mes de la temporada");
+let temporada2 = estacion.toLowerCase();
 
-switch ("temporada") {    
-    case "diciembre": 
-      console.log("mes diciembre la temporada es verano");
-      console.warn(`${mes}`);
-      break;
-    case "enero":
-      console.log("mes enero la temporada es verano");
-      console.warn(`${mes}`);
-      break;
-    case "febrero":
-      console.log("mes febrero la temporada es verano");
-      console.warn(`${mes}`);
-      break;
-    case "marzo":
-      console.log("la temporada es otoño");
-      break;
-    case "abril":
-      console.log("la temporada es otoño");
-      break;
-    case "mayo":
-      console.log("la temporada es otoño");
-      break;
-    case "junio":
-      console.log("la temporada es invierno");
-      break;
-    case "julio":
-      console.log("la temporada es invierno");
-      break;
-    case "agosto":
-      console.log("la temporada es invierno");
-      break;
-    case "septiembre":
-      console.log("la temporada es primavera");
-      break;
-    case "octubre":
-      console.log("la temporada es primavera");
-      break;
-    case "noviembre":
-      console.log("la temporada es primavera");
-      break;
-    default:
-      console.log("temporada equivocada.");
-  }
- 
+if (
+        temporada2 == "septiembre" || 
+        temporada2 == "octubre" ||
+        temporada2 == "noviembre" 
+      ) 
+{
+       alert("la temporada es primavera"); 
+} else if ( 
+         temporada2 == "diciembre" || 
+         temporada2 == "enero" ||
+         temporada2 == "febrero"
+       ) 
+{
+       alert("la temporada es verano");
+
+} else if (  
+         temporada2 == "marzo" || 
+         temporada2 == "abril" ||
+         temporada2 == "mayo" 
+       ) 
+{
+       alert("la temporada es otoño");
+
+} else if (  
+         temporada2 == "junio" || 
+         temporada2 == "julio" ||
+         temporada2 == "agosto" 
+       )
+{
+       alert("la temporada es invierno");
+
+} else {
+       alert("Ingresa el nombre de un mes valido");
+}
+
 /*3. Compruebe si un día es un día de fin de semana o un día laborable. Su script tomará el día como entrada.
 ¿Qué día es hoy? Sábado
 El sábado es fin de semana.
@@ -141,31 +140,12 @@ El viernes es un día laborable.
 El viernes es un día laborable.*/
 let dia = prompt("¿Que dia es hoy?");
 
-switch (dia) {
-    case "lunes":
-     console.log("lunes es un dia laborable.");
-     break;  
-    case "martes":
-     console.log("martes es un dia laborable.");     
-     break;
-    case "miercoles":
-     console.log("miercoles es un dia laborable.");     
-     break;
-    case "jueves":
-     console.log("jueves es un dia laborable.");     
-     break;
-    case "viernes":
-     console.log("viernes es un dia laborable.");     
-     break;
-    case "sabado":
-     console.log("sabado es fin de semana");     
-     break;
-    case "domingo":
-     console.log("domingo es fin de semana");     
-     break;
-    default:
-     console.error("No ingresaste un nombre de la semana. Vuelva a intentarlo..")
-}
+dia.toUpperCase() == "SABADO" ||
+dia.toUpperCase() == "VIERNES"
+
+? alert (dia.toUpperCase('es fin de semana'))
+: alert (dia.toUpperCase('es dia laborable'))
+
 
 //ejercicios nivel_3
 
@@ -181,7 +161,138 @@ Febrero tiene 28 días.
 
 Introduce un mes: FEbrero
 Febrero tiene 28 días.
+*/
+
+function obtenerDiaDelMes(year,month) {
+  return new Date(year, month, 0).getDate();
+}
+let mes = prompt("Introduce un mes: ");
+ 
+switch (mes.toUpperCase()) { 
+      case "ENERO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,1)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) { 
+      case "FEBRERO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,2)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "MARZO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,3)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "ABRIL":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,4)} dias.`);
+      break;
+}
+      switch (mes.toUpperCase()) {
+      case "MAYO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,5)} dias.`);
+      break;
+      }
+switch (mes.toUpperCase()) {
+      case "JUNIO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,6)} dias.`);
+      break; 
+}
+switch (mes.toUpperCase()) {
+      case "JULIO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,7)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "AGOSTO":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,8)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "SEPTIEMBRE":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,9)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "OCTUBRE":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,10)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) { 
+      case "NOVIEMBRE":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,11)} dias.`);
+      break;
+}
+switch (mes.toUpperCase()) {
+      case "DICIEMBRE":
+      console.log(`${mes} tiene ${obtenerDiaDelMes(2023,12)} dias.`);
+      break;
+}
 
 //2. Escribe un programa que diga el número de días en un mes, ahora considera un año bisiesto.
 
-*/
+function obtenerDiaDelMes(year,month) {
+      return new Date(year, month, 0).getDate();
+    }
+    let mes20 = prompt("Introduce un mes: ");
+     
+    switch (mes.toUpperCase()) { 
+          case "ENERO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,1)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) { 
+          case "FEBRERO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,2)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "MARZO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,3)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "ABRIL":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,4)} dias.`);
+          break;
+    }
+          switch (mes.toUpperCase()) {
+          case "MAYO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,5)} dias.`);
+          break;
+          }
+    switch (mes.toUpperCase()) {
+          case "JUNIO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,6)} dias.`);
+          break; 
+    }
+    switch (mes.toUpperCase()) {
+          case "JULIO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,7)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "AGOSTO":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,8)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "SEPTIEMBRE":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,9)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "OCTUBRE":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,10)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) { 
+          case "NOVIEMBRE":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,11)} dias.`);
+          break;
+    }
+    switch (mes.toUpperCase()) {
+          case "DICIEMBRE":
+          console.log(`${mes} tiene ${obtenerDiaDelMes(2020,12)} dias.`);
+          break;
+    }
